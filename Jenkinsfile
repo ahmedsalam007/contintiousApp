@@ -1,15 +1,7 @@
 pipeline {
     agent any
 
-    stages {
-        stage('checkout') {
-            steps {
-                checkout scmGit(
-    branches: [[name: 'master']],
-    userRemoteConfigs: [[url: 'https://github.com/ahmedsalam007/contintiousApp.git']])
-            }
-        }
-        
+    stages {        
         stage('Install dependencies') {
             steps {
                bat 'npm i'
